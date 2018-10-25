@@ -44,6 +44,12 @@ namespace Cam1
         public MainPage()
         {
             this.InitializeComponent();
+            Loaded += MainPage_Loaded;
+        }
+
+        public async void MainPage_Loaded(object s, object e)
+        {
+            await InitCameraAsync();
         }
 
         public async Task InitCameraAsync()
@@ -95,7 +101,7 @@ namespace Cam1
                 vp.Subtype = "NV12";
 
                 await capture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, vp);
-                preview.Source = capture;
+                capturePreview.Source = capture;
 
                 Debug.WriteLine("Camera Initialized");
 

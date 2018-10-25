@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <StackPanel Orientation="Horizontal">
+            <CaptureElement x:Name="capturePreview" Width="320" Height="240" />
+            <Image x:Name="imagePreview" Stretch="None" Width="320" Height="240" />
+        </StackPanel>
 
     </Grid>
 </Page>
